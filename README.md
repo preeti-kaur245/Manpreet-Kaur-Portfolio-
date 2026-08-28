@@ -9,6 +9,9 @@
 
 ---
 
+vercel link : https://manpreet-kaur-portfolio-plum.vercel.app/
+
+
 ## 🌟 Core Philosophy
 
 ### **NOTICE. QUESTION. BUILD.**
