@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Compass, Lightbulb, Eye, Laptop, Zap, Bot, Sparkles, CheckCircle2 } from 'lucide-react';
+import { Compass, Lightbulb, Eye, Laptop, Zap, Bot, Sparkles, CheckCircle2, ChevronRight, ChevronLeft } from 'lucide-react';
 
 export default function JourneyTimeline() {
   const [selectedMilestone, setSelectedMilestone] = useState(3);
@@ -58,23 +58,23 @@ export default function JourneyTimeline() {
       border: 'border-purple-500/40',
       bg: 'bg-purple-500/10',
       desc: 'Automated high-volume e-certificate delivery for festival attendees using an API query architecture.',
-      takeaway: 'Good design removes unnecessary operational steps.'
+      takeaway: 'Eliminated hours of manual certificate verification.'
     },
     {
       step: '06',
-      title: 'AI EXPERIMENTATION',
-      subtitle: 'Conversational & Voice Agents',
+      title: 'AI PRODUCT PIVOT',
+      subtitle: 'Google Gemini Challenges & LLMs',
       icon: Bot,
       color: 'text-pink-400',
       border: 'border-pink-500/40',
       bg: 'bg-pink-500/10',
-      desc: 'Pioneered AI-assisted mentors, ElevenLabs voice agents, and prompt workflows to guide interactive learning.',
-      takeaway: 'Interfaces are evolving into intelligent collaborators.'
+      desc: 'Secured 3× first positions in Gemini AI challenges, building AI voice mentors and generative toolsets.',
+      takeaway: 'AI is not just a feature; it is an intelligent design layer.'
     },
     {
       step: '07',
       title: 'TODAY & BEYOND',
-      subtitle: 'Product Designer • AI Creative',
+      subtitle: 'Product Design · AI · Engineering',
       icon: CheckCircle2,
       color: 'text-emerald-400',
       border: 'border-emerald-500/40',
@@ -85,30 +85,27 @@ export default function JourneyTimeline() {
   ];
 
   return (
-    <section id="journey" className="py-28 px-4 md:px-8 relative z-10 border-t border-white/[0.08]">
+    <section id="journey" className="py-20 sm:py-28 px-4 sm:px-6 md:px-8 relative z-10 border-t border-white/[0.08]">
       <div className="max-w-7xl mx-auto">
         
         {/* Section Title */}
-        <div className="mb-14 text-center max-w-2xl mx-auto">
+        <div className="mb-10 sm:mb-14 text-center max-w-2xl mx-auto">
           <div className="inline-flex items-center gap-2 mb-3">
-            <span className="text-xs font-mono text-cyan-400 tracking-widest uppercase">05 — EVOLUTION</span>
+            <span className="text-xs font-mono text-cyan-400 tracking-widest uppercase">03 — EVOLUTION</span>
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-white tracking-tight font-display mb-3">
             HOW I GOT HERE
           </h2>
-          <p className="text-slate-400 text-sm sm:text-base">
+          <p className="text-slate-300 text-xs sm:text-base font-light">
             A continuous progression from early creative curiosity to intentional product engineering.
           </p>
         </div>
 
         {/* Interactive Timeline Track */}
-        <div className="relative mb-12">
+        <div className="relative mb-8 sm:mb-12">
           
-          {/* Connecting Line (Desktop) */}
-          <div className="hidden lg:block absolute top-1/2 left-0 right-0 h-[2px] bg-gradient-to-r from-cyan-500 via-violet-500 to-emerald-500 -translate-y-1/2 -z-10 opacity-30" />
-
-          {/* Timeline Milestones Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-7 gap-3">
+          {/* Horizontal Snap Scroll on Mobile */}
+          <div className="flex sm:grid sm:grid-cols-2 lg:grid-cols-7 gap-2.5 sm:gap-3 overflow-x-auto pb-3 sm:pb-0 no-scrollbar snap-x snap-mandatory">
             {milestones.map((m, idx) => {
               const Icon = m.icon;
               const isSelected = selectedMilestone === idx;
@@ -116,14 +113,14 @@ export default function JourneyTimeline() {
                 <button
                   key={m.step}
                   onClick={() => setSelectedMilestone(idx)}
-                  className={`p-4 rounded-2xl text-left transition-all duration-300 flex flex-col justify-between ${
+                  className={`min-w-[150px] sm:min-w-0 min-h-[48px] p-3.5 sm:p-4 rounded-2xl text-left transition-all duration-300 flex flex-col justify-between shrink-0 snap-start active:scale-95 ${
                     isSelected
-                      ? `${m.bg} ${m.border} border shadow-[0_0_25px_rgba(56,189,248,0.25)] scale-[1.03]`
+                      ? `${m.bg} ${m.border} border shadow-[0_0_25px_rgba(56,189,248,0.25)] scale-[1.02]`
                       : 'bg-white/[0.02] border border-white/5 hover:bg-white/[0.06]'
                   }`}
                 >
                   <div>
-                    <div className="flex items-center justify-between mb-3">
+                    <div className="flex items-center justify-between mb-2.5">
                       <span className="text-[10px] font-mono text-slate-400 font-bold">{m.step}</span>
                       <div className={`p-1.5 rounded-lg ${isSelected ? m.bg : 'bg-white/5'}`}>
                         <Icon className={`w-3.5 h-3.5 ${isSelected ? m.color : 'text-slate-400'}`} />
@@ -133,7 +130,7 @@ export default function JourneyTimeline() {
                       {m.title}
                     </div>
                   </div>
-                  <div className="text-[10px] text-slate-400 font-mono mt-2 truncate">
+                  <div className="text-[10px] text-slate-400 font-mono mt-1.5 truncate">
                     {m.subtitle}
                   </div>
                 </button>
@@ -144,19 +141,19 @@ export default function JourneyTimeline() {
         </div>
 
         {/* Expanded Focus Card for Selected Milestone */}
-        <div className="glass-panel p-8 sm:p-10 rounded-3xl border border-white/10 max-w-4xl mx-auto shadow-2xl relative overflow-hidden">
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 mb-6 border-b border-white/10">
+        <div className="glass-panel p-6 sm:p-8 md:p-10 rounded-3xl border border-white/10 max-w-4xl mx-auto shadow-2xl relative overflow-hidden">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-4 pb-5 mb-5 border-b border-white/10">
             <div className="flex items-center gap-3">
               <div className={`p-3 rounded-2xl ${milestones[selectedMilestone].bg} ${milestones[selectedMilestone].border} border`}>
                 {React.createElement(milestones[selectedMilestone].icon, {
-                  className: `w-6 h-6 ${milestones[selectedMilestone].color}`
+                  className: `w-5 h-5 sm:w-6 sm:h-6 ${milestones[selectedMilestone].color}`
                 })}
               </div>
               <div>
-                <span className="text-xs font-mono text-cyan-400 uppercase tracking-wider block">
+                <span className="text-[11px] font-mono text-cyan-400 uppercase tracking-wider block">
                   MILESTONE {milestones[selectedMilestone].step}
                 </span>
-                <h3 className="text-2xl font-bold text-white tracking-tight">
+                <h3 className="text-lg sm:text-2xl font-bold text-white tracking-tight">
                   {milestones[selectedMilestone].title}
                 </h3>
               </div>
@@ -166,15 +163,34 @@ export default function JourneyTimeline() {
             </span>
           </div>
 
-          <p className="text-slate-300 text-base sm:text-lg leading-relaxed mb-6">
+          <p className="text-slate-300 text-sm sm:text-base leading-relaxed mb-5">
             {milestones[selectedMilestone].desc}
           </p>
 
-          <div className="p-4 rounded-2xl bg-black/40 border border-white/10 flex items-center gap-3">
+          <div className="p-3.5 sm:p-4 rounded-2xl bg-black/40 border border-white/10 flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3">
             <span className="text-xs font-mono text-cyan-400 font-bold uppercase whitespace-nowrap">Core Takeaway:</span>
             <span className="text-xs sm:text-sm text-slate-200 italic">
               "{milestones[selectedMilestone].takeaway}"
             </span>
+          </div>
+
+          {/* Quick Prev / Next Controls for Mobile */}
+          <div className="flex items-center justify-between mt-5 pt-3 border-t border-white/5">
+            <button
+              onClick={() => setSelectedMilestone((prev) => (prev === 0 ? milestones.length - 1 : prev - 1))}
+              className="min-h-[44px] px-3 py-1.5 rounded-lg text-xs font-mono text-slate-400 hover:text-white flex items-center gap-1 active:scale-95 transition-all"
+            >
+              <ChevronLeft className="w-4 h-4" />
+              <span>Previous Milestone</span>
+            </button>
+
+            <button
+              onClick={() => setSelectedMilestone((prev) => (prev + 1) % milestones.length)}
+              className="min-h-[44px] px-3.5 py-1.5 rounded-lg bg-white/5 border border-white/10 text-xs font-mono text-cyan-400 hover:text-cyan-300 flex items-center gap-1 active:scale-95 transition-all"
+            >
+              <span>Next Milestone</span>
+              <ChevronRight className="w-4 h-4" />
+            </button>
           </div>
         </div>
 
