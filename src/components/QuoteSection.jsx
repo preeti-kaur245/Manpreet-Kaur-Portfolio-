@@ -30,7 +30,7 @@ export default function QuoteSection() {
 
         <div className="flex flex-col items-center justify-center gap-1">
           <span className="text-sm font-bold text-white tracking-widest font-mono uppercase">Manpreet Kaur</span>
-          <span className="text-xs text-slate-400 font-mono">Product Designer • AI Creative • Problem Solver</span>
+          <span className="text-xs text-slate-400 font-mono">Product Design · AI · UX/UI · Engineering · Rapid Prototyping</span>
         </div>
 
       </div>

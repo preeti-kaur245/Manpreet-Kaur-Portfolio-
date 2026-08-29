@@ -6,7 +6,7 @@ export default function Hero() {
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
   const [activeStep, setActiveStep] = useState(0);
 
-  const steps = ['PRODUCT DESIGNER', 'AI CREATIVE', 'PRODUCT BUILDER', 'PROBLEM SOLVER'];
+  const steps = ['AI PRODUCT DESIGNER & AI ENGINEER', 'PROBLEM SOLVER'];
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -185,7 +185,7 @@ export default function Hero() {
             {/* Corner Process Badge */}
             <div className="absolute -bottom-8 left-1/2 -translate-x-1/2 bg-[#07101F]/90 border border-white/10 backdrop-blur-md px-4 py-1.5 rounded-full text-[11px] font-mono text-slate-300 flex items-center gap-2 shadow-xl whitespace-nowrap">
               <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-              <span>OBSERVE → THINK → DESIGN → BUILD</span>
+              <span>OBSERVE → DESIGN → ENGINEER → BUILD → ITERATE </span>
             </div>
 
           </div>

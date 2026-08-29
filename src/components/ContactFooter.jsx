@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import { 
-  Mail, 
-  Send, 
-  Check, 
-  Copy, 
-  ArrowUpRight, 
-  Sparkles, 
+import {
+  Mail,
+  Send,
+  Check,
+  Copy,
+  ArrowUpRight,
+  Sparkles,
   MessageSquare,
   ArrowUp
 } from 'lucide-react';
@@ -50,15 +50,15 @@ export default function ContactFooter() {
 
   return (
     <footer id="contact" className="relative z-10 border-t border-white/[0.08] bg-[#03050a] pt-28 pb-16 px-4 md:px-8">
-      
+
       {/* Background Ambient Light */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-48 bg-gradient-to-b from-cyan-500/5 to-transparent pointer-events-none" />
 
       <div className="max-w-7xl mx-auto">
-        
+
         {/* Main Contact Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 mb-24 items-start">
-          
+
           {/* Left Column: Vision & Social Connect */}
           <div className="lg:col-span-6 space-y-8">
             <div>
@@ -84,7 +84,7 @@ export default function ContactFooter() {
 
             {/* Direct Connect Buttons */}
             <div className="space-y-3 max-w-md">
-              
+
               {/* Copy Email Button */}
               <div className="p-4 rounded-2xl bg-white/[0.03] border border-white/10 flex items-center justify-between hover:border-cyan-500/30 transition-all">
                 <div className="flex items-center gap-3">
@@ -142,7 +142,7 @@ export default function ContactFooter() {
           {/* Right Column: Interactive Send Inquiry Form */}
           <div className="lg:col-span-6">
             <div className="glass-panel p-8 sm:p-10 rounded-3xl border border-white/10 shadow-2xl relative overflow-hidden">
-              
+
               <div className="flex items-center justify-between pb-4 mb-6 border-b border-white/10">
                 <div className="flex items-center gap-2">
                   <MessageSquare className="w-4 h-4 text-cyan-400" />
@@ -225,17 +225,13 @@ export default function ContactFooter() {
 
         {/* Bottom Footer Section */}
         <div className="pt-12 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-6 text-xs text-slate-400 font-mono">
-          
+
           <div className="flex flex-col sm:flex-row items-center gap-4 text-center sm:text-left">
             <div className="text-white font-bold text-sm tracking-tight">
               MANPREET KAUR
             </div>
             <span className="hidden sm:inline text-slate-600">•</span>
-            <div>Product Designer • AI Creative • Product Builder</div>
-          </div>
-
-          <div className="text-center italic text-slate-300 font-sans">
-            “Designing ideas. Building possibilities. Creating experiences.”
+            <div>Product Design · AI · UX/UI · Engineering · Rapid Prototyping</div>
           </div>
 
           <div className="flex items-center gap-4">
@@ -273,7 +269,7 @@ export default function ContactFooter() {
         </div>
 
         <div className="text-center text-[11px] text-slate-600 font-mono mt-8">
-          © {new Date().getFullYear()} Manpreet Kaur. Designed with intention. Built for humans.
+          © {new Date().getFullYear()} Manpreet Kaur. Designing ideas. Building possibilities. Creating experiences.
         </div>
 
       </div>
